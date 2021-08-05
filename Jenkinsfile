@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-    registry = "https://hub.docker.com/repository/docker/talharao/nodej_s"
+    registry = "talharao/nodej_s"
     registryCredential = 'Dockerhub'
 }
 
