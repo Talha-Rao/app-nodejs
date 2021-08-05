@@ -1,5 +1,6 @@
 pipeline {
-    agent any{
+    agent any {
+       
     }
     environment {
     registry = "talharao/nodej_s"
@@ -9,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Done"
+                echo "Talha"
             }
         }
        stage('Test') {
