@@ -1,7 +1,5 @@
 pipeline {
-    agent any {
-       
-    }
+    agent any 
     environment {
     registry = "talharao/nodej_s"
     registryCredential = 'Dockerhub'
