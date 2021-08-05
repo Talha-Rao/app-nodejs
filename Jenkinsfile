@@ -6,8 +6,10 @@ pipeline {
         }
     }
     environment {
-        CI = 'true'
-    }
+    registry = "https://hub.docker.com/repository/docker/talharao/nodej_s"
+    registryCredential = 'Dockerhub'
+}
+
     stages {
         stage('Build') {
             steps {
@@ -25,6 +27,16 @@ pipeline {
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
+    
         }
+        stage('Building image') {
+            steps{
+                script {
+                    docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+     }
+    
     }
+
 }
