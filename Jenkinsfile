@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
+    
     environment {
     registry = "talharao/nodej_s"
     registryCredential = 'Dockerhub'
@@ -13,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                echo "Done"
             }
         }
        stage('Test') {
