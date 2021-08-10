@@ -7,22 +7,24 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {
+             steps {
                 sh 'npm install'
             }
         }
-        stage('Sonarqube'){
-            steps {
+        stage('Sonarqube') {
+             steps {
                   sh 'npm install --save-dev sonarqube-scanner'
                   sh 'node sonarqube-scanner.js'
-            }    
+            }   
+
+        } 
        stage('Test') {
-            steps {
+             steps {
                 sh './jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') {
-            steps {
+             steps {
                 sh './jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
@@ -30,7 +32,7 @@ pipeline {
     
         }
         
-     }
+    
     
     }
 
