@@ -5,11 +5,6 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-    environment {
-    registry = "talharao/nodej_s"
-    registryCredential = 'Dockerhub'
-}
-
     stages {
         stage('Build') {
             steps {
@@ -34,12 +29,7 @@ pipeline {
             }
     
         }
-        stage('Building image') {
-            steps{
-                script {
-                    docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
+        
      }
     
     }
