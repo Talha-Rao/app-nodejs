@@ -16,6 +16,11 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Sonarqube'){
+            steps {
+                  sh 'npm install --save-dev sonarqube-scanner'
+                  sh 'node sonarqube-scanner.js'
+            }    
        stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
