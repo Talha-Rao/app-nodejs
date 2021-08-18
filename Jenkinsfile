@@ -9,13 +9,12 @@ pipeline {
         stage('Build') {
              steps {
                echo "build stage success"
-               echo "build stage success"
+               
             }
         }
         stage('Sonarqube') {
              steps {
-                  sh 'npm install --save-dev sonarqube-scanner'
-                  sh 'node sonarqube-scanner.js'
+                echo "Sonarqube stage success"
             }   
 
         } 
