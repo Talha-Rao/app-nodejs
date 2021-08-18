@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
              steps {
                echo "build stage success"
+               echo "build stage success"
             }
         }
         stage('Sonarqube') {
